@@ -41,6 +41,12 @@ scroll.observe(element, {
         element.style.setProperty(options.name, scale);
     }
 })
+
+//Remove an element
+scroll.unobserve(element);
+
+//Remove all elements
+scroll.disconnect();
 ```
 
 The `--scale` variable is a float number between 0 and 1, so you can use it in the css code:

@@ -6,4 +6,3 @@ scroll.observe(document.querySelector("#element"), {
   viewport: [1, 0.5],
   element: [0, 0.5],
 });
-

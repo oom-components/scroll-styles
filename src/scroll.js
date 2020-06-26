@@ -64,6 +64,9 @@ export default class Scroll {
 
   disconnect() {
     this.observer.disconnect();
+    this.pause();
+    this.observed = new Map();
+    this.visible = new Set();
   }
 
   intersect(entries) {
