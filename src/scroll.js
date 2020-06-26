@@ -21,7 +21,7 @@ export default class Scroll {
     this.frame = null;
   }
 
-  init() {
+  play() {
     if (this.callback) {
       return;
     }
@@ -77,7 +77,7 @@ export default class Scroll {
     });
 
     if (this.visible.size) {
-      this.init();
+      this.play();
     } else {
       this.pause();
     }

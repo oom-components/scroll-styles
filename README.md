@@ -41,9 +41,6 @@ scroll.observe(element, {
         element.style.setProperty(options.name, scale);
     }
 })
-
-//Init the library (attach events on scroll and resize)
-scroll.init();
 ```
 
 The `--scale` variable is a float number between 0 and 1, so you can use it in the css code:
