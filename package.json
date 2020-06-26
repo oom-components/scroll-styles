@@ -7,10 +7,6 @@
   "files": [
     "src"
   ],
-  "scripts": {
-    "start": "http-server -c-1",
-    "prettier": "prettier src/*.js demo/*.js --single-quote --tab-width 4 --write --print-width 120"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oom-components/scroll-styles.git"
@@ -28,9 +24,5 @@
   "bugs": {
     "url": "https://github.com/oom-components/scroll-styles/issues"
   },
-  "homepage": "https://github.com/oom-components/scroll-styles#readme",
-  "devDependencies": {
-    "http-server": "^0.12.3",
-    "prettier": "^2.0.5"
-  }
+  "homepage": "https://github.com/oom-components/scroll-styles#readme"
 }
