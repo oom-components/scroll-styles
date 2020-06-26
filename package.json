@@ -1,0 +1,36 @@
+{
+  "name": "@oom/scroll-styles",
+  "version": "0.1.0",
+  "description": "Modify css properties on scroll",
+  "browser": "src/scroll.js",
+  "modules.root": "src",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "start": "http-server -c-1",
+    "prettier": "prettier src/*.js demo/*.js --single-quote --tab-width 4 --write --print-width 120"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oom-components/scroll-styles.git"
+  },
+  "keywords": [
+    "progressive",
+    "web",
+    "component",
+    "parallax",
+    "scroll",
+    "es6"
+  ],
+  "author": "Oscar Otero <oom@oscarotero.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oom-components/scroll-styles/issues"
+  },
+  "homepage": "https://github.com/oom-components/scroll-styles#readme",
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "prettier": "^2.0.5"
+  }
+}
