@@ -3,8 +3,8 @@
  */
 const defaultOptions = {
   name: "--scale",
-  element: 0,
-  viewport: 1,
+  element: [0, 1],
+  viewport: [1, 0],
   handler(element, scale, options) {
     element.style.setProperty(options.name, scale);
   },
@@ -101,11 +101,13 @@ export default class Scroll {
       const rect = element.getBoundingClientRect();
       const options = this.observed.get(element);
 
-      const y = rect.top + rect.height * options.element;
-      const height = viewportHeight * options.viewport;
-      const scale = 1 - Math.max(0, Math.min((y - height) / height, 1));
+      const from = (viewportHeight * options.viewport[0]) -
+        (rect.height * options.element[0]);
+      const to = (viewportHeight * options.viewport[1]) -
+        (rect.height * options.element[1]);
+      const scale = (rect.top - from) / (to - from);
 
-      options.handler(element, scale, options);
+      options.handler(element, Math.max(0, Math.min(scale, 1)), options);
     });
   }
 }

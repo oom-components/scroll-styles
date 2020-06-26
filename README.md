@@ -32,9 +32,9 @@ const scroll = new Scroll();
 const element = document.querySelector('.parallax');
 
 scroll.observe(element, {
-    name: '--scale', // Name of the custom property
-    element: 0,      // Element intersection (0 = top, 1 = bottom, 0.5 = middle, etc)
-    viewport: 1,      // Viewport intersection (0 = top, 1 = bottom, 0.5 = middle, etc)
+    name: '--scale',  // Name of the custom property
+    element: [0, 1],  // [from, to] element intersection (0 = top, 1 = bottom, 0.5 = middle, etc)
+    viewport: [1, 0]  // [from, to] viewport intersection
 
     //Custom handler, if you want to do more things that just update the property
     handler(element, scale, options) {
