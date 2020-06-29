@@ -57,7 +57,7 @@ export default class Scroll {
         if (event.matches) {
           observe();
         } else {
-          element.style.removeProperty(options.name, null);
+          element.style.removeProperty(options.name);
           this.unobserve(element);
         }
       });
