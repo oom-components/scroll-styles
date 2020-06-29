@@ -9,10 +9,12 @@ li {
 img {
     display: block;
 }
-#element {
+#element,
+#element2 {
     background: blue;
     opacity: var(--scale, 1);
 }
-#element img {
+#element img,
+#element2 img {
     transform: translateY(calc((1 - var(--scale, 1)) * 5rem));
 }

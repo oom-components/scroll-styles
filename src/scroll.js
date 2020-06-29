@@ -45,15 +45,30 @@ export default class Scroll {
   observe(element, options = {}) {
     options = Object.assign({}, defaultOptions, options);
 
-    this.observer.observe(element);
-    this.observed.set(element, options);
-  }
+    const observe = () => {
+      this.observer.observe(element);
+      this.observed.set(element, options);
+    };
 
-  observe(element, options = {}) {
-    options = Object.assign({}, defaultOptions, options);
+    if (options.media) {
+      const mq = matchMedia(options.media);
 
-    this.observer.observe(element);
-    this.observed.set(element, options);
+      mq.addListener((event) => {
+        if (event.matches) {
+          observe();
+        } else {
+          element.style.removeProperty(options.name, null);
+          this.unobserve(element);
+        }
+      });
+
+      if (mq.matches) {
+        observe();
+      }
+      return;
+    }
+
+    observe();
   }
 
   unobserve(element) {

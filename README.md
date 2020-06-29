@@ -15,7 +15,10 @@ It's inspired by [basicScroll](https://github.com/electerious/basicScroll) libra
 Requirements:
 
 * NPM or Yarn to install [the package and the dependencies](https://www.npmjs.com/@oom/scroll-styles)
-* It uses [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to detect when the elements are visible in the viewport and [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) to perform the animations.
+* Any browser supporting the following APIs:
+  * [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to detect when the elements are visible in the viewport.
+  * [requestAnimationFrame](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame) to perform the animations.
+  * [MediaQueryList](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList) to observe elements while a media-query is true.
 
 ```sh
 npm install @oom/scroll-styles
@@ -35,6 +38,7 @@ scroll.observe(element, {
     name: '--scale',  // Name of the custom property
     element: [0, 1],  // [from, to] element intersection (0 = top, 1 = bottom, 0.5 = middle, etc)
     viewport: [1, 0]  // [from, to] viewport intersection
+    media: '(min-width: 500px)'  // Observe only while this media-query is true
 
     //Custom handler, if you want to do more things that just update the property
     handler(element, scale, options) {
